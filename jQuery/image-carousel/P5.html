@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .container{
+      width: 820px;
+      height: 500px;
+      justify-content: center;
+    }
+
+    #slider {
+      width: 720px;
+      height: 400px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    #slider .slides{
+      display: block;
+      width: 6000px;
+      height: 400px;
+      margin: 0;
+      padding: 0;
+    }
+
+    #slider .slide{
+      float: left;
+      list-style-type: none;
+      width: 720px;
+      height: 400px;
+    }
+
+    img{
+      width: 720px;
+      height: 400px;
+    }
+
+    button{
+      margin-left: 180px;
+    }
+
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="p5.js"></script>
+  <title>JQuery Slider</title>
+</head>
+<body>
+  <div class="container">
+  
+    <div id="slider">
+
+      <ul class="slides">
+
+        <li class="slide">
+          <a href="https://www.google.com/search?q=norway+landscapes&rlz=1C1AVFC_enRO949RO949&sxsrf=ALeKk00bDiXbPrdQQGwJf-FPtrH2BgdauA:1620736455857&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj66-bl0cHwAhX7wAIHHU46De0Q_AUoAXoECAEQAw&biw=1536&bih=722#imgrc=HYF0v0DlFNo8AM" target="_blank">
+            <img src="https://drscdn.500px.org/photo/54280182/m%3D900/5dfe754da72e264c094f384b3401cea5" alt="landscape">
+          </a>
+        </li>
+
+        <li class="slide">
+          <a href="https://www.google.com/search?q=norway+landscapes&rlz=1C1AVFC_enRO949RO949&sxsrf=ALeKk00bDiXbPrdQQGwJf-FPtrH2BgdauA:1620736455857&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj66-bl0cHwAhX7wAIHHU46De0Q_AUoAXoECAEQAw&biw=1536&bih=722#imgrc=HYF0v0DlFNo8AM" target="_blank">
+            <img src="https://cdn.theatlantic.com/thumbor/yAAXtm37zKFnkE02D2eMldvSCCo=/900x608/media/img/photo/2017/09/landscapes-of-norway/n03_844052000/original.jpg" alt="landscape">
+          </a>
+        </li>
+
+        <li class="slide">
+          <a href="https://www.google.com/search?q=norway+landscapes&rlz=1C1AVFC_enRO949RO949&sxsrf=ALeKk00bDiXbPrdQQGwJf-FPtrH2BgdauA:1620736455857&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj66-bl0cHwAhX7wAIHHU46De0Q_AUoAXoECAEQAw&biw=1536&bih=722#imgrc=HYF0v0DlFNo8AM" target="_blank">
+            <img src="https://www.travelmanagers.com.au/wp-content/uploads/2016/04/iStock_000068142299_Medium.jpg" alt="landscape">
+          </a>
+        </li>
+
+        <li class="slide">
+          <a href="https://www.google.com/search?q=norway+landscapes&rlz=1C1AVFC_enRO949RO949&sxsrf=ALeKk00bDiXbPrdQQGwJf-FPtrH2BgdauA:1620736455857&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj66-bl0cHwAhX7wAIHHU46De0Q_AUoAXoECAEQAw&biw=1536&bih=722#imgrc=HYF0v0DlFNo8AM" target="_blank">
+            <img src="https://www.onthegotours.com/blog/wp-content/uploads/2016/08/Norway-in-Pictures-blog-featured-image.jpg" alt="landscape">
+          </a>
+        </li>
+
+        <li class="slide">
+          <a href="https://www.google.com/search?q=norway+landscapes&rlz=1C1AVFC_enRO949RO949&sxsrf=ALeKk00bDiXbPrdQQGwJf-FPtrH2BgdauA:1620736455857&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj66-bl0cHwAhX7wAIHHU46De0Q_AUoAXoECAEQAw&biw=1536&bih=722#imgrc=HYF0v0DlFNo8AM" target="_blank">
+            <img src="https://drscdn.500px.org/photo/54280182/m%3D900/5dfe754da72e264c094f384b3401cea5" alt="landscape">
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+    <button class="Prev">Prev</button>
+    <button class="Next">Next</button>
+  </div>
+</body>
+</html>

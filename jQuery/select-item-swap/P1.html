@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Problema 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="p1.js">
+    </script>
+</head>
+
+<body>
+    <!-- <script>
+        function list1fct(i) {
+            if (i != "") {
+                var lista1 = document.getElementById("lista1");
+                var lista2 = document.getElementById("lista2");
+                var option1 = document.createElement("option");
+                option1.value = i;
+                option1.innerHTML = i;
+                for (var j = 0; j < lista1.length; j++) {
+                    if (lista1[j].value == i)
+                        lista1.remove(j);
+                }
+                lista2.appendChild(option1);
+            }
+    }
+
+        function list2fct(i) {
+            if (i != "") {
+                var lista2 = document.getElementById("lista2");
+                var lista1 = document.getElementById("lista1");
+                var option1 = document.createElement("option");
+                option1.value = i;
+                option1.innerHTML = i;
+                for (var j = 0; j < lista2.length; j++) {
+                    if (lista2[j].value == i)
+                        lista2.remove(j);
+                }
+                lista1.appendChild(option1);
+            }
+        }
+    </script> -->
+
+    <select name="lista1" id="lista1" size="10">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+
+    </select>
+
+
+    <select name="lista2" id="lista2" size="10">
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+    </select>
+</body>
+
+</html>
