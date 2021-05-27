@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        function myfunction1(nr) {
+            var table, columns, x, y, i, j, s, mod, ok, modif = 0;
+            table = document.getElementById("table1");
+            mod = "asc";
+            s = true;
+            while (s) {
+                s = false;
+                rows = table.rows;
+                for (i = 1; i < (rows[nr].cells.length - 1); i++) {
+                    ok = false;
+                    x = rows[nr].cells.item(i).innerHTML;
+                    y = rows[nr].cells.item(i + 1).innerHTML;
+                    if (mod == "asc" && x.toLowerCase() > y.toLowerCase()) {
+                        ok = true;
+                        break;
+                    }
+                    if (mod == "desc" && x.toLowerCase() < y.toLowerCase()) {
+                        ok = true;
+                        break;
+                    }
+
+
+                }
+                if (ok) {
+                    for (j = 0; j < rows.length; j++)
+                        rows[j].cells.item(i).parentNode.insertBefore(rows[j].cells.item(i + 1), rows[j].cells.item(i))
+                    s = true;
+                    modif++;
+                }
+                else {
+                    if (modif == 0 && mod == "asc") {
+                        mod = "desc";
+                        s = true;
+                    }
+                }
+            }
+        }
+
+        function myfunction2(nr) {
+            var table, rows, x, y, i, s, mod, ok, modif = 0;
+            table = document.getElementById("table2");
+            mod = "asc";
+            s = true;
+            while (s) {
+                s = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    ok = false;
+                    x = rows[i].getElementsByTagName("TD")[nr];
+                    y = rows[i + 1].getElementsByTagName("TD")[nr];
+                    if (mod == "asc" && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        ok = true;
+                        break;
+                    }
+                    if (mod == "desc" && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        ok = true;
+                        break;
+                    }
+
+
+                }
+                if (ok) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    s = true;
+                    modif++;
+                }
+                else {
+                    if (modif == 0 && mod == "asc") {
+                        mod = "desc";
+                        s = true;
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <table id="table1">
+        <tr>
+            <th onclick="myfunction1(0)">Nume</th>
+            <td>mere</td>
+            <td>pere</td>
+            <td>banane</td>
+
+
+        </tr>
+        <tr>
+            <th onclick="myfunction1(1)">Pret</th>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+
+        </tr>
+        <tr>
+            <th onclick="myfunction1(2)">Cantitate</th>
+            <td>8</td>
+            <td>3</td>
+            <td>5</td>
+
+
+        </tr>
+
+
+
+    </table>
+
+    <table id="table2"  style="margin-top:50px">
+        <tr>
+            <th onclick="myfunction2(0)">Nume</th>
+            <th onclick="myfunction2(1)">Pret</th>
+            <th onclick="myfunction2(2)">Cantitate</th>
+        </tr>
+        <tr>
+            <td>mere</td>
+            <td>3</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>pere</td>
+            <td>4</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>banane</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+
+
+    </table>
+
+</body>
+</html>

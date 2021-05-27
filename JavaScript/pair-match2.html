@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+            border: groove;
+            width: 300px;
+            height: 300px;
+        }
+
+        th, tr {
+            border: groove;
+        }
+
+        p {
+            visibility: hidden;
+        }
+
+        img {
+            width:50px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var variabila1 = 0;
+        var id;
+        var value;
+
+        function myfunction(i) {
+            var x = document.getElementById(i);
+            var y = x.getElementsByTagName("p");
+            y[0].style.visibility = "visible";
+            if (variabila1 == 0) {
+                variabila1 = y[0].innerHTML;
+                id = x;
+                value = y;
+            }
+            else {
+                if (variabila1 == y[0].innerHTML) {
+                    variabila1 = 0;
+                } else {
+                    setTimeout(() => { y[0].style.visibility = "hidden"; }, 1500);
+                    setTimeout(() => { value[0].style.visibility = "hidden"; }, 1500);
+                    variabila1 = 0;
+                }
+            }
+
+        }
+    </script>
+    <table id="table">
+        <tr>
+            <th id="11" onclick="myfunction(this.id)"><p><img src="https://www.gardeningknowhow.com/wp-content/uploads/2020/12/lonely-japanese-cherry.jpg"></p></th>
+            <th id="12" onclick="myfunction(this.id)"><p><img src="https://photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg"></p></th>
+            <th id="13" onclick="myfunction(this.id)"><p><img src="https://www.gardeningknowhow.com/wp-content/uploads/2020/12/lonely-japanese-cherry.jpg"></p></th>
+        </tr>
+        <tr>
+            <th id="21" onclick="myfunction(this.id)"><p><img src="https://photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg"></p></th>
+            <th id="22" onclick="myfunction(this.id)"><p><img src="https://cdn.hovia.com/app/uploads/Red-Illustrated-Landscape-Sunset-Wallpaper-Mural-plain.jpg"></p></th>
+            <th id="23" onclick="myfunction(this.id)"><p><img src="https://cdn.hovia.com/app/uploads/Red-Illustrated-Landscape-Sunset-Wallpaper-Mural-plain.jpg"></p></th>
+        </tr>
+    </table>
+</body>
+</html>

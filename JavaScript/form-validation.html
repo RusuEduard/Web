@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form name="myform" onsubmit="return false" >
+        <label for="nume">Nume:</label> 
+        <input type="text" name="nume" id="nume">
+        <br/>
+        <br />
+        <label for="data_nasterii">Data nasterii (dd/mm/yyyy):</label>
+        <input type="text" name="data_nasterii", id="data_nasterii">
+        <br/>
+        <br />
+        <label for="varsta">Varsta:</label>
+        <input type="number" name="varsta" id="varsta">
+        <br />
+        <br />
+        <label for="mail">Mail</label>
+        <input type="text" name="mail" id="mail">
+        <br />
+        <br />
+        <input type="submit" value="Submit" onclick="validare_date()" >
+    </form>
+
+    <p id="message"></p>
+
+
+    <script>
+        function validare_date() {
+            var msg = "Campurile ";
+            var error = 0;
+            var firstname = document.forms["myform"]["nume"].value;
+            if (firstname == "" || firstname.lenght < 3) {
+                msg +="nume ";
+                document.getElementById("nume").style.borderColor = "red";
+                error += 1;
+            }
+            else {
+                document.getElementById("nume").style.borderColor = "black";
+            }
+
+            var dateformat = /^(0?[1-9]|[12][0-9]|3[01])\/(0?[1-9]|1[012])\/\d{4}$/;
+            var elems = document.forms["myform"]["data_nasterii"].value
+            if (!elems.match(dateformat)) {
+                msg += "data nasterii";
+                document.forms["myform"]["data_nasterii"].style.borderColor = "red";
+                error += 1
+            }
+            else {
+                document.forms["myform"]["data_nasterii"].style.borderColor = "black"
+            }
+
+            var varsta = document.forms["myform"]["varsta"].value;
+            if (varsta < 0 || varsta == null) {
+                msg += "varsta ";
+                document.forms["myform"]["varsta"].style.borderColor = "red";
+                error += 1;
+            } else {
+                document.forms["myform"]["varsta"].style.borderColor = "black";
+            }
+
+            var mailformat = /.+@.+/
+            var mail = document.forms["myform"]["mail"].value;
+            if (!mail.match(mailformat)) {
+                msg += "mail ";
+                document.forms["myform"]["mail"].style.borderColor = "red";
+                error += 1;
+            } else {
+                document.forms["myform"]["mail"].style.borderColor = "black";
+            }
+
+            if (error == 0) {
+                document.getElementById("message").innerHTML = "Datele sunt completate corect";
+            }
+            else {
+                msg +="nu sunt completate corect"
+                document.getElementById("message").innerHTML = msg;
+            }
+
+        }
+    </script>
+
+</body>
+</html>
