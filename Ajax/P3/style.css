@@ -1,0 +1,9 @@
+body{
+  background-color:cornsilk;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+select{
+  margin-bottom: 10px;
+}
